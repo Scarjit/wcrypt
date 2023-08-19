@@ -3,10 +3,10 @@ use sha3::Digest;
 use aes_gcm_siv::aead::Aead;
 use anyhow::Result;
 use anyhow::Error;
-use anyhow::anyhow;
+use anyhow::bail;
 
 
-pub(crate) fn encrypt(plaintext: &[u8], key: &str) -> Result<Vec<u8>> {
+pub fn encrypt(plaintext: &[u8], key: &str) -> Result<Vec<u8>> {
     // Create sha3 hash from key to enforce 256 bit key length
     let mut hasher = sha3::Sha3_256::new();
     hasher.update(key.as_bytes());
@@ -26,10 +26,10 @@ pub(crate) fn encrypt(plaintext: &[u8], key: &str) -> Result<Vec<u8>> {
     Ok(ciphertext)
 }
 
-pub(crate) fn decrypt(ciphertext: &[u8], key: &str) -> Result<Vec<u8>> {
+pub fn decrypt(ciphertext: &[u8], key: &str) -> Result<Vec<u8>> {
     // Check if ciphertext is long enough to contain ciphertext+nonce
     if ciphertext.len() < 12 {
-        return Err(anyhow!("Ciphertext to short"));
+        bail!("Ciphertext to short");
     }
 
     // Create sha3 hash from key to enforce 256 bit key length

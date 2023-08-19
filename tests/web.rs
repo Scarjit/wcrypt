@@ -9,10 +9,10 @@ wasm_bindgen_test_configure!(run_in_browser);
 
 #[wasm_bindgen_test]
 fn symmetric() {
-    let text = "Hello World!";
+    let text = "Hello World!".as_bytes();
     let key = "ABC";
 
-    let ciphertext = crate::encrypt(text, key).unwrap();
-    let plaintext = crate::decrypt(&ciphertext, key).unwrap();
+    let ciphertext = wcrypt::symmetric::encrypt(text, key).unwrap();
+    let plaintext = wcrypt::symmetric::decrypt(&ciphertext, key).unwrap();
     assert_eq!(text, plaintext)
 }
