@@ -1,4 +1,8 @@
 #![allow(unused_variables)]
+
+pub(crate) mod encrypt;
+pub(crate) mod utils;
+
 fn main() {
     use wasm_bindgen::prelude::*;
 
@@ -15,6 +19,6 @@ fn main() {
 
     #[wasm_bindgen]
     pub fn greet() {
-        alert("Hello, from wasm!");
+        log!("Hello, from wasm!");
     }
 }
