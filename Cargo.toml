@@ -1,10 +1,10 @@
 [package]
-name = "wCrypt"
+name = "wcrypt"
 version = "0.1.0"
 authors = ["Ferdinand Linnenberg <ferdinand@linnenberg.dev>"]
 edition = "2021"
 description = "A simple webassembly cryptography library"
-repository = "https://github.com/Scarjit/wCrypt"
+repository = "https://github.com/Scarjit/wcrypt"
 license = "MIT or Apache-2.0"
 
 [lib]

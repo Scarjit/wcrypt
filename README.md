@@ -1,4 +1,4 @@
-# wCrypt
+# wcrypt
 
 ## About
 
