@@ -5,7 +5,7 @@ authors = ["Ferdinand Linnenberg <ferdinand@linnenberg.dev>"]
 edition = "2021"
 description = "A simple webassembly cryptography library"
 repository = "https://github.com/Scarjit/wcrypt"
-license = "MIT or Apache-2.0"
+license = "MIT"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -33,4 +33,5 @@ wasm-bindgen-test = "0.3.37"
 
 [profile.release]
 # Tell `rustc` to optimize for small code size.
-opt-level = "s"
+opt-level = 3
+lto = true
