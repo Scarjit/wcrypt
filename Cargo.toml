@@ -15,9 +15,12 @@ default = ["console_error_panic_hook"]
 
 [dependencies]
 wasm-bindgen = "0.2.87"
-aes-gcm-siv = "0.11.1"
+aes-gcm-siv = { version = "0.11.1" }
 web-sys = { version = "0.3.64", features = ["console"] }
 getrandom = { version = "0.2.10", features = ["js"]}
+sha3 = "0.10.8"
+base64 = "0.21.2"
+anyhow = { version = "1.0.71", default-features = false }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
