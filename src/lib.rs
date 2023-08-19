@@ -1,8 +1,8 @@
 #![allow(unused_variables)]
 #![deny(clippy::unwrap_used)]
 
-pub(crate) mod symmetric;
-pub(crate) mod utils;
+pub mod symmetric;
+pub mod utils;
 
 fn main() {
     use wasm_bindgen::prelude::*;
