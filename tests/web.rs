@@ -8,6 +8,11 @@ use wasm_bindgen_test::*;
 wasm_bindgen_test_configure!(run_in_browser);
 
 #[wasm_bindgen_test]
-fn pass() {
-    assert_eq!(1 + 1, 2);
+fn symmetric() {
+    let text = "Hello World!";
+    let key = "ABC";
+
+    let ciphertext = crate::encrypt(text, key).unwrap();
+    let plaintext = crate::decrypt(&ciphertext, key).unwrap();
+    assert_eq!(text, plaintext)
 }
